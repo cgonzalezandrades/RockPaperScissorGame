@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loops</title>
+</head>
+
+<body>
+    <p>
+        WELCOME TO ROCK PAPER SCISSORS !
+    </p>
+    <br>
+    <p>Here are your options</p>
+    <ul>
+        <li id="rock"> Press "r" for Rock</li>
+        <li id="paper">Press "p" for Paper</li>
+        <li id="scissors">Press "s" for Scissors</li>
+    </ul>
+    <hr>
+
+    <p>Computer Win = <span id="resultComputer"></span></p>
+    <p>You Win = <span id="resultPlayer"></span> </p>
+    <p>Is a Tie =<span id="resultTie"></span></p>
+
+
+
+
+    <script>
+        /* 
+                                                                                rock =0
+                                                                                paper=1
+                                                                                scissors =2
+                                                                                */
+
+
+
+
+        var resultsPlayer = "0";
+        var resultsTie = "0";
+        var resultsComputer = "0";
+
+        window.onkeydown = function (event) {
+
+            var playerChoice = event.key;
+            var computer = Math.floor((Math.random() * 3));
+
+            console.log("you pressed this key " + event.key);
+
+
+
+
+          //  console.log("this key was pressed ", event);
+            console.log(computer);
+
+
+            /*ROCK*/
+            if (playerChoice === 'r' && computer === 2) {
+                resultsPlayer++;
+                console.log("Computer picked Scissors so you Won");
+                document.querySelector('#resultPlayer').innerHTML = resultsPlayer;
+            }
+
+            if (playerChoice === 'r' && computer === 0) {
+                resultsTie++;
+                console.log("Is a tie ");
+                document.querySelector('#resultTie').innerHTML = resultsTie;
+            }
+
+            if (playerChoice === 'r' && computer === 1) {
+                resultsComputer++;
+                console.log("Computer picked paper so it Won ! THIS COMPUTER IS FROM SKYNET ");
+                document.querySelector('#resultComputer').innerHTML = resultsComputer;
+            }
+
+            /*PAPER*/
+            if (playerChoice === 'p' && computer === 2) {
+                resultsPlayer++;
+                console.log("Computer picked Scissors so you Won");
+                document.querySelector('#resultPlayer').innerHTML = resultsPlayer;
+            }
+
+            if (playerChoice === 'p' && computer === 1) {
+                resultsTie++;
+                console.log("Is a tie ");
+                document.querySelector('#resultTie').innerHTML = resultsTie;
+            }
+
+            if (playerChoice === 'p' && computer === 0) {
+                resultsComputer++;
+                console.log("Computer Rock Scissors so it Won ! THIS COMPUTER IS FROM SKYNET ");
+                document.querySelector('#resultComputer').innerHTML = resultsComputer;
+            }
+
+            /*SCISSORS*/
+
+            if (playerChoice === 's' && computer === 1) {
+                resultsPlayer++;
+                console.log("Computer picked paper so you Won");
+                document.querySelector('#resultPlayer').innerHTML = resultsPlayer;
+            }
+
+            if (playerChoice === 's' && computer === 2) {
+                resultsTie++;
+                console.log("Is a tie ");
+                document.querySelector('#resultTie').innerHTML = resultsTie;
+            }
+
+            if (playerChoice === 's' && computer === 0) {
+                resultsComputer++;
+                console.log("Computer picked Rock so it Won ! THIS COMPUTER IS FROM SKYNET ");
+                document.querySelector('#resultComputer').innerHTML = resultsComputer;
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>
